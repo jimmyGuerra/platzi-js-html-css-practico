@@ -1,20 +1,23 @@
 //Desktop menu
 const desktopmenu = document.querySelector('.desktop-menu');
 const navEmail = document.querySelector('.navbar-email');
-
 navEmail.addEventListener('click', toggleDesktopMenu);
 
 //Mobile Menu
 const iconMenuMobile = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
+iconMenuMobile.addEventListener('click', toggleMobileMenu);
 
-iconMenuMobile.addEventListener('click', toggleMobileMenu)
+//Carrito de compras
+const iconCar = document.querySelector('.navbar-shopping-cart');
+const shoppingCar = document.querySelector('.product-detail');
+iconCar.addEventListener('click', toggleShoppingCar)
 
-
-
-
+//Desktop menu
 function toggleDesktopMenu(){
     //de esta manera se resume todo el condicional que se encuentra comentado
+    shoppingCar.classList.add('inactive');
+    mobileMenu.classList.add('inactive');
     desktopmenu.classList.toggle('inactive');
 
 /*    if(desktopmenu.getAttribute('class') == "desktop-menu inactive"){
@@ -26,6 +29,26 @@ function toggleDesktopMenu(){
     }*/
 }
 
+
+
+//Mobile Menu
 function toggleMobileMenu(){
+    //se le agrega a shoppingCar la clase inactive, en dado caso no este abierto
+    //de esta manera se evita que en mobile se monte un menu sobre otro
+    shoppingCar.classList.add('inactive');
+    desktopmenu.classList.add('inactive');
     mobileMenu.classList.toggle('inactive');
 }
+
+
+
+//Carrito de compras
+function toggleShoppingCar(){
+    //se le agrega a mobileMenu la clase inactive, en dado caso no este abierto
+    //de esta manera se evita que en mobile se monte un menu sobre otro
+
+    mobileMenu.classList.add('inactive');
+    desktopmenu.classList.add('inactive');
+    shoppingCar.classList.toggle('inactive');
+}
+

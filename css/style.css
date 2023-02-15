@@ -276,7 +276,8 @@ body {
 .mobile-menu{
     padding: 24px;
     position: absolute;
-    top: 60px;
+    top: 61px;
+    background-color: var(--white);
 }
 
 .mobile-menu ul{
@@ -303,8 +304,7 @@ body {
 
 .mobile-menu .email{
     font-size: var(--sm);
-    font-weight: 300;
-    
+    font-weight: 300;    
 }
 
 .mobile-menu .sign-out{
@@ -497,6 +497,7 @@ nav{
 
 .navbar-shopping-cart{
     position: relative;
+    cursor: pointer;
 
 }
 
@@ -520,6 +521,7 @@ nav{
     padding-bottom: 24px;
     position: absolute;
     right: 0;
+    background-color: var(--white);
     
 }
 
@@ -640,6 +642,10 @@ nav{
 
     .product-detail{
         width: 100%;
+    }
+
+    .mobile-menu{
+        width: 80%;
     }
 
 }

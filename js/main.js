@@ -13,6 +13,9 @@ const iconCar = document.querySelector('.navbar-shopping-cart');
 const shoppingCar = document.querySelector('.product-detail');
 iconCar.addEventListener('click', toggleShoppingCar)
 
+//Lista de productos 
+const cardConteiner = document.querySelector('.cards-conteiner');
+
 //Desktop menu
 function toggleDesktopMenu(){
     //de esta manera se resume todo el condicional que se encuentra comentado
@@ -30,7 +33,6 @@ function toggleDesktopMenu(){
 }
 
 
-
 //Mobile Menu
 function toggleMobileMenu(){
     //se le agrega a shoppingCar la clase inactive, en dado caso no este abierto
@@ -39,7 +41,6 @@ function toggleMobileMenu(){
     desktopmenu.classList.add('inactive');
     mobileMenu.classList.toggle('inactive');
 }
-
 
 
 //Carrito de compras
@@ -51,4 +52,67 @@ function toggleShoppingCar(){
     desktopmenu.classList.add('inactive');
     shoppingCar.classList.toggle('inactive');
 }
+
+//Lista de productos
+const productList = [];
+
+productList.push({
+    name: 'Bike',
+    price: 120,
+    image: 'https://images.pexels.com/photos/1149601/pexels-photo-1149601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+});
+
+productList.push({
+    name: 'computadora',
+    price: 1202,
+    image: 'https://images.pexels.com/photos/1149601/pexels-photo-1149601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+});
+
+productList.push({
+    name: 'pantalla',
+    price: 550,
+    image: 'https://images.pexels.com/photos/1149601/pexels-photo-1149601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+});
+
+function renderProduct(productList){
+    for(product of productList){
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+    
+        const productImg = document.createElement('img');
+        productImg.setAttribute('src', product.image);
+    
+        const productInfo = document.createElement('div');
+        productInfo.classList.add('product-info');
+    
+        const productInfoDiv = document.createElement('div');
+    
+        const productPrice = document.createElement('p');
+        const productName = document.createElement('p');
+    
+        productPrice.innerText = '$' + product.price;
+        productName.innerText = product.name;
+    
+        productInfoDiv.append(productPrice, productName);
+    
+        const productInfoFigure = document.createElement('figure');
+        const productImgCar = document.createElement('img');
+        productImgCar.setAttribute('src', './css/icons/bt_add_to_cart.svg');
+    
+        productInfoFigure.append(productImgCar);
+    
+        productInfo.append(productInfoDiv, productInfoFigure);
+    
+        productCard.append(productImg,productInfo)
+    
+        cardConteiner.append(productCard);
+    
+    }
+}
+
+renderProduct(productList)
+
+
+
+
 

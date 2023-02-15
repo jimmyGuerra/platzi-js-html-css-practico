@@ -184,6 +184,7 @@ body {
 }
 
 .product-card{
+    margin-top: 20px ;
     width: 240px;
 }
 .product-card img{

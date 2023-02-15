@@ -275,6 +275,8 @@ body {
 
 .mobile-menu{
     padding: 24px;
+    position: absolute;
+    top: 60px;
 }
 
 .mobile-menu ul{
@@ -302,6 +304,7 @@ body {
 .mobile-menu .email{
     font-size: var(--sm);
     font-weight: 300;
+    
 }
 
 .mobile-menu .sign-out{
@@ -622,6 +625,7 @@ nav{
 
     .menu{
         display: block;
+        cursor: pointer;
     }
     .navbar-left ul {
         display: none;

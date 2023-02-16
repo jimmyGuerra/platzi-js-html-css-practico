@@ -10,7 +10,7 @@ iconMenuMobile.addEventListener('click', toggleMobileMenu);
 
 //Carrito de compras
 const iconCar = document.querySelector('.navbar-shopping-cart');
-const shoppingCar = document.querySelector('.product-detail');
+const shoppingCar = document.querySelector('#shoppingCartConteiner');
 iconCar.addEventListener('click', toggleShoppingCar)
 
 //Lista de productos 

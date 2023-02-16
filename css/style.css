@@ -279,6 +279,10 @@ body {
     position: absolute;
     top: 61px;
     background-color: var(--white);
+    left: 0;
+    width: calc(100% - 48px);
+    height: calc(70% + 48px);
+
 }
 
 .mobile-menu ul{
@@ -546,6 +550,7 @@ nav{
     height: 360px;
     object-fit: cover;
     border-radius: 0 0 20px 20px;
+
 }
 
 
@@ -643,10 +648,6 @@ nav{
 
     .product-detail{
         width: 100%;
-    }
-
-    .mobile-menu{
-        width: 80%;
     }
 
 }

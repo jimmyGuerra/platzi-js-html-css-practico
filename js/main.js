@@ -16,12 +16,17 @@ iconCar.addEventListener('click', toggleShoppingCar)
 //Lista de productos 
 const cardConteiner = document.querySelector('.cards-conteiner');
 
+//Detalles de los productos
+const productDetailConteiner = document.querySelector('#productDetail');
+const buttonClosedDetails = document.querySelector('.product-detail-close');
+
 //Desktop menu
 function toggleDesktopMenu(){
     //de esta manera se resume todo el condicional que se encuentra comentado
     shoppingCar.classList.add('inactive');
     mobileMenu.classList.add('inactive');
     desktopmenu.classList.toggle('inactive');
+    productDetailConteiner.classList.add('inactive');
 
 /*    if(desktopmenu.getAttribute('class') == "desktop-menu inactive"){
         desktopmenu.classList.remove('inactive');
@@ -40,6 +45,7 @@ function toggleMobileMenu(){
     shoppingCar.classList.add('inactive');
     desktopmenu.classList.add('inactive');
     mobileMenu.classList.toggle('inactive');
+    productDetailConteiner.classList.add('inactive');
 }
 
 
@@ -51,10 +57,18 @@ function toggleShoppingCar(){
     mobileMenu.classList.add('inactive');
     desktopmenu.classList.add('inactive');
     shoppingCar.classList.toggle('inactive');
+    productDetailConteiner.classList.add('inactive');
 }
 
 //Lista de productos
 const productList = [];
+
+
+productList.push({
+    name: 'computadora',
+    price: 1202,
+    image: 'https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+});
 
 productList.push({
     name: 'Bike',
@@ -62,16 +76,11 @@ productList.push({
     image: 'https://images.pexels.com/photos/1149601/pexels-photo-1149601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 });
 
-productList.push({
-    name: 'computadora',
-    price: 1202,
-    image: 'https://images.pexels.com/photos/1149601/pexels-photo-1149601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-});
 
 productList.push({
     name: 'pantalla',
     price: 550,
-    image: 'https://images.pexels.com/photos/1149601/pexels-photo-1149601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 });
 
 function renderProduct(productList){
@@ -81,6 +90,7 @@ function renderProduct(productList){
     
         const productImg = document.createElement('img');
         productImg.setAttribute('src', product.image);
+        productImg.addEventListener('click', toggleProductDetail)
     
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
@@ -113,6 +123,16 @@ function renderProduct(productList){
 renderProduct(productList)
 
 
+//Detalles de los productos
+buttonClosedDetails.addEventListener('click', closedProductDetails);
 
+function toggleProductDetail(){
+    productDetailConteiner.classList.toggle('inactive');
+}
 
-
+function closedProductDetails(){
+    productDetailConteiner.classList.add('inactive');
+    shoppingCar.classList.add('inactive');
+    mobileMenu.classList.add('inactive');
+    desktopmenu.classList.add('inactive');
+}

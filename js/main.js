@@ -58,6 +58,7 @@ function toggleShoppingCar(){
     desktopmenu.classList.add('inactive');
     shoppingCar.classList.toggle('inactive');
     productDetailConteiner.classList.add('inactive');
+
 }
 
 //Lista de productos

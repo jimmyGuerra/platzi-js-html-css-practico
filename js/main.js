@@ -127,8 +127,14 @@ renderProduct(productList)
 //Detalles de los productos
 buttonClosedDetails.addEventListener('click', closedProductDetails);
 
-function toggleProductDetail(){
+function toggleProductDetail(event){
+    const image = document.querySelector('.product-img');
+    const productPrice = document.querySelector('#productPrice')
     productDetailConteiner.classList.toggle('inactive');
+    mobileMenu.classList.add("inactive");
+    desktopmenu.classList.add("inactive");
+    image.setAttribute("src", event.target.src);
+    productPrice.innerText = event.target.nextElementSibling.innerText; 
 }
 
 function closedProductDetails(){
@@ -137,3 +143,4 @@ function closedProductDetails(){
     mobileMenu.classList.add('inactive');
     desktopmenu.classList.add('inactive');
 }
+

@@ -133,6 +133,7 @@ function toggleProductDetail(event){
     productDetailConteiner.classList.toggle('inactive');
     mobileMenu.classList.add("inactive");
     desktopmenu.classList.add("inactive");
+    shoppingCar.classList.add('inactive');
     image.setAttribute("src", event.target.src);
     productPrice.innerText = event.target.nextElementSibling.innerText; 
 }

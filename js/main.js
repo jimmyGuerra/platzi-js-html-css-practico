@@ -69,12 +69,14 @@ productList.push({
     name: 'computadora',
     price: 1202,
     image: 'https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    details: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum beatae delectus aut adipisci numquam reprehenderit facilis quod? Natus nemo, perferendis magni illo pariatur aut rerum eius saepe assumenda nihil nobis.",
 });
 
 productList.push({
     name: 'Bike',
     price: 120,
     image: 'https://images.pexels.com/photos/1149601/pexels-photo-1149601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    details: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum beatae delectus aut adipisci numquam reprehenderit facilis quod? Natus nemo, perferendis magni illo pariatur aut rerum eius saepe assumenda nihil nobis.",
 });
 
 
@@ -82,6 +84,7 @@ productList.push({
     name: 'pantalla',
     price: 550,
     image: 'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    details: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum beatae delectus aut adipisci numquam reprehenderit facilis quod? Natus nemo, perferendis magni illo pariatur aut rerum eius saepe assumenda nihil nobis.",
 });
 
 function renderProduct(productList){
@@ -95,14 +98,17 @@ function renderProduct(productList){
     
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
+
+
     
         const productInfoDiv = document.createElement('div');
     
         const productPrice = document.createElement('p');
         const productName = document.createElement('p');
-    
+
         productPrice.innerText = '$' + product.price;
         productName.innerText = product.name;
+
     
         productInfoDiv.append(productPrice, productName);
     
@@ -130,12 +136,13 @@ buttonClosedDetails.addEventListener('click', closedProductDetails);
 function toggleProductDetail(event){
     const image = document.querySelector('.product-img');
     const productPrice = document.querySelector('#productPrice')
-    productDetailConteiner.classList.toggle('inactive');
+    productDetailConteiner.classList.remove('inactive');
     mobileMenu.classList.add("inactive");
     desktopmenu.classList.add("inactive");
     shoppingCar.classList.add('inactive');
     image.setAttribute("src", event.target.src);
     productPrice.innerText = event.target.nextElementSibling.innerText; 
+    
 }
 
 function closedProductDetails(){

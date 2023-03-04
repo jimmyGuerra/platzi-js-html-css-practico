@@ -440,7 +440,6 @@ body {
     font-size: var(--sm);
     color: var(--very-light-pink);
 }
-
 .orders p:nth-child(2){
     text-align: end;
     font-weight: bold;
